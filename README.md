@@ -17,3 +17,16 @@
 
 ```bash
 pip install -r requirements.txt
+### 2. Загрузить модель и векторизатор
+```import joblib
+model = joblib.load('models/news_classifier.pkl')
+vectorizer = joblib.load('models/tfidf_vectorizer.pkl')
+###Текст для классификации
+```text = ["Цены на бензин выросли в России"]
+Векторизация (ВАЖНО: только transform!)
+X = vectorizer.transform(text)
+###Предсказание
+```prediction = model.predict(X)[0]
+confidence = model.predict_proba(X).max()
+print(f"📰 Класс: {prediction}")
+print(f"🎯 Уверенность: {confidence:.2%}")
