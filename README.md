@@ -16,7 +16,7 @@
 ### 1. Установка зависимостей
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt```
 ### 2. Загрузить модель и векторизатор
 ```import joblib
 model = joblib.load('models/news_classifier.pkl')
